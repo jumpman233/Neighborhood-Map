@@ -137,6 +137,17 @@ a:hover{
     font-size: 30px;
 }
 
+#no-data{
+    color: #ddd;
+    padding: 30px;
+}
+
+@media screen and (max-width: 500px){
+    .page-main .page-sidebar {
+        width: 100%;
+    }
+}
+
 @media screen and (max-width: 1000px){
     .page-main .page-sidebar {
         top: 50px;

@@ -11,7 +11,8 @@ let map = null,
 const $ele = {
     sidebar: $('.page-sidebar'),
     mainContent: $('.page-content'),
-    errMsg: $('#error-msg')
+    errMsg: $('#error-msg'),
+    noData: $('#no-data')
 };
 
 const clickMenu = (model, event) => {
@@ -33,6 +34,11 @@ const checkHideMenu = () => {
 
 const setErrMsg = (content)=>{
     $ele.errMsg.text(content);
+};
+
+const showNoDataFound = ()=>{
+    viewModel.resetData();
+    $ele.noData.show();
 };
 
 $(() => {
@@ -72,6 +78,7 @@ function AppViewModel() {
             item.marker.setMap(null);
         });
         self.posList.removeAll();
+        $ele.noData.hide();
     };
 }
 
@@ -139,6 +146,8 @@ const googleNearbySearch = (map, service, request) => {
 
                 google.maps.event.addListener(marker, 'click', place.clickMarker);
             }
+        } else if(status == google.maps.places.PlacesServiceStatus.ZERO_RESULTS){
+            showNoDataFound();
         } else if (status == google.maps.places.PlacesServiceStatus.UNKNOWN_ERROR) {
             alert('A server-side error occurred; trying again may be successful.');
         }

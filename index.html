@@ -15,6 +15,7 @@
             <input placeholder="input location to search" type="text" class="search-input" data-bind="value: searchInput">
             <a class="page-search-btn" data-bind="click: clickSearch"></a>
         </div>
+        <div id="no-data" style="display: none;">No data found!</div>
         <ul class="loc-list" data-bind="foreach:posList, click: clickItem">
             <li data-bind="text:name"></li>
         </ul>
