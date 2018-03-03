@@ -13,10 +13,10 @@ A single page application featuring a map of your neighborhood or a neighborhood
 Notice: The code in /dist will not be used at all, web-dev-server generates files in internal storage. Upload /dist codes are just to fit the rubric.
 ## Third Party
 - Google map API(build the map and get location data).
-- wikipedia(to get a location description).
+- wikipedia(get a location description).
 - KnockoutJS(build a page with MVVM)
-- jQuery(Dom operations and AJAX).
+- jQuery(DOM operations and AJAX).
 ## Details
-1. When the page is loaded, it will try to access the visitor's location. If the {} fails, A default location will be set.
+1. When the page is loaded, it will try to access the visitor's location. If the request fails, A default location will be set.
 2. If the google map js loads failed, the page will show error message and does't work :( 
 3. A marker will try to show a wiki title with a link provided by wikipedia, if the request for wikipedia is wrong or no data found, the wiki title will not show.
