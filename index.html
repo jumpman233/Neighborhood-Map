@@ -5,9 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title></title>
     <link rel="stylesheet" href="">
+    <style>
+        html, body{
+            height: 100%;
+            background: #ddd;
+        }
+        #map{
+            height: 500px;
+        }
+    </style>
 </head>
 <body>
-    
-    <script src="./dist/bundle.js"></script>
+<input type="text" data-bind="value: searchInput">
+<button data-bind="click: clickSearch">sublit</button>
+<ul data-bind="foreach:posList">
+    <li data-bind="text:name"></li>
+</ul>
+<div id="map"></div>
+<script src="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDqgigWw3v5eQXFZJNML9akN326BVa_cqc"></script>
+<script src="./res/bundle.js"></script>
 </body>
 </html>
