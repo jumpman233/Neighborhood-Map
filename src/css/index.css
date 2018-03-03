@@ -1,0 +1,150 @@
+html, body{
+    height: 100%;
+    background: #ddd;
+}
+
+a:hover{
+    cursor: pointer;
+}
+
+#map{
+    width: 100%;
+    height: calc(100vh - 50px);
+}
+
+.page-main{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.page-main .page-sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #000;
+    width: 300px;
+    height: 100vh;
+    overflow-x: hidden;
+    transition: transform 200ms linear;
+}
+
+.page-main .page-sidebar.menu-hide{
+    transform: translateX(-100%);
+}
+
+.page-main .page-sidebar .search-box{
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 0;
+    height: 30px;
+}
+
+.search-box .search-input{
+    display: flex;
+    flex-grow: 1;
+    padding: 0 10px;
+}
+
+.search-box .search-input::-webkit-input-placeholder{
+    color: #666;
+}
+
+.search-box .page-search-btn{
+    display: inline-block;
+    width: 50px;
+    height: 30px;
+    background: url(../img/search.png) no-repeat center, #1FB4E2;
+    background-size: 20px 20px;
+}
+
+.search-box .page-search-btn:hover{
+    cursor: pointer;
+}
+
+.page-main .page-content{
+    width: 100%;
+    margin-left: 300px;
+    height: 100vh;
+    transition: margin-left 200ms linear;
+}
+
+.page-main .page-content.menu-hide{
+    margin-left: 0;
+}
+
+.page-nav{
+    height: 50px;
+    background-color: #1D272F;
+    display: flex;
+}
+
+.page-title{
+    color: #ddd;
+    font-size: 30px;
+    padding: 20px 0 20px 10px;
+}
+
+.loc-list{
+    overflow: scroll;
+}
+
+.loc-list li{
+    color: #ddd;
+    padding: 10px;
+}
+
+.loc-list li:hover{
+    cursor: pointer;
+    color: #fff;
+}
+
+.page-nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.menu-item{
+    display: inline-block;
+    background: url(../img/menu.png) no-repeat center;
+    background-size: 20px;
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+
+    transition: transform 200ms linear;
+}
+
+.menu-item:hover{
+    background-color: #2F3D48;
+}
+
+.menu-item.rotate{
+    transform: rotate(90deg);
+}
+
+#error-msg{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    line-height: 1.3;
+    font-size: 30px;
+}
+
+@media screen and (max-width: 1000px){
+    .page-main .page-sidebar {
+        top: 50px;
+        z-index: 1;
+        background: rgba(0,0,0,.7);
+    }
+
+    .page-main .page-content{
+        margin-left: 0;
+    }
+}

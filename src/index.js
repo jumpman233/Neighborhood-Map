@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import ko from 'knockout';
-import './index.css';
+import './css/reset.css';
+import './css/index.css';
 
 let map = null,
     location = null,
