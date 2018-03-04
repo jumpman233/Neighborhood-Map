@@ -2,6 +2,7 @@ import $ from 'jquery';
 import ko from 'knockout';
 import './css/reset.css';
 import './css/index.css';
+/*jshint loopfunc: true */
 
 (function () {
     'use strict';
